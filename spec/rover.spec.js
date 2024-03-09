@@ -14,9 +14,9 @@ describe("Rover class", function() {
 
   it("response returned by receiveMessage contains name of message", function() {
     let commands = [new Command('MODE_CHANGE', 'LOW_POWER'), new Command('STATUS_CHECK')];
-    let theMessage = new Message("New message!", commands);
+    let message = new Message("New message!", commands);
     let rover = new Rover(100);
-    let response = rover.receiveMessage(theMessage);
+    let response = rover.receiveMessage(message);
     expect(response.message).toEqual("New message!");
   });
 
